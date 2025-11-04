@@ -1120,6 +1120,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1583749741398894363, guid: 78658404cfc117d43a1ed21d086a8eff, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3713715739946012052, guid: 78658404cfc117d43a1ed21d086a8eff, type: 3}
       propertyPath: m_Convex
       value: 1
@@ -1294,6 +1298,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1583749741398894363, guid: 78658404cfc117d43a1ed21d086a8eff, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3713715739946012052, guid: 78658404cfc117d43a1ed21d086a8eff, type: 3}
       propertyPath: m_Convex
       value: 1
@@ -1745,11 +1753,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1037633641}
   m_LocalEulerAnglesHint: {x: 13.598, y: 0, z: 0}
---- !u!1 &1034578587 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6651196069036814389, guid: de46a61c23e35424db60e0451357e027, type: 3}
-  m_PrefabInstance: {fileID: 422613306}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1037633640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,6 +1913,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1583749741398894363, guid: 78658404cfc117d43a1ed21d086a8eff, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3713715739946012052, guid: 78658404cfc117d43a1ed21d086a8eff, type: 3}
       propertyPath: m_Convex
       value: 1
@@ -2134,15 +2141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cdafe70afafab4caf0ac4b1fe7cbba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeBallMat
-  BowlingBall: {fileID: 1034578587}
-  BallMaterials:
-  - {fileID: 2100000, guid: ff20e6a3ebf979d4693ad2c7051ee5fb, type: 2}
-  - {fileID: 2100000, guid: 2b5661351231b404bab2fbb5bfdbb8d4, type: 2}
-  - {fileID: 2100000, guid: 4f9518443ef631b408460fa7715c63e1, type: 2}
-  - {fileID: 2100000, guid: 233c92a2628f37548af9d5590ecaca75, type: 2}
-  - {fileID: 2100000, guid: a544850973781a944802b01df3e9d0e1, type: 2}
-  - {fileID: 2100000, guid: 9ca638cb833223e4a826178bf6f22023, type: 2}
-  - {fileID: 2100000, guid: 3992228caca006c4ba34f9a1bd1b33be, type: 2}
 --- !u!1 &1366248236
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,6 +2482,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1583749741398894363, guid: 78658404cfc117d43a1ed21d086a8eff, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3713715739946012052, guid: 78658404cfc117d43a1ed21d086a8eff, type: 3}
       propertyPath: m_Convex
       value: 1
@@ -2745,6 +2747,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1583749741398894363, guid: 78658404cfc117d43a1ed21d086a8eff, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3713715739946012052, guid: 78658404cfc117d43a1ed21d086a8eff, type: 3}
       propertyPath: m_Convex
       value: 1
@@ -2856,12 +2862,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1726225741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5e3900986ba3b44a2593fc92c425ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b3a649c8d1cf094ab2bc3eea676c317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RampHandler
   Ramp: {fileID: 17687984}
-  Active: 1
-  ZPosition: 0
+  Active: 0
+  ZLocation: 0
   Angle: 45
 --- !u!1 &1845274380
 GameObject:
@@ -2904,10 +2910,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1845274380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0786252efea4d4b8eeb6c1678a44ea, type: 3}
+  m_Script: {fileID: 11500000, guid: f1d1a87fc80ed1a428417536006182c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityChanger
-  On: 1
+  Active: 1
 --- !u!1 &1968841421
 GameObject:
   m_ObjectHideFlags: 0
@@ -3277,6 +3283,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1583749741398894363, guid: 78658404cfc117d43a1ed21d086a8eff, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3713715739946012052, guid: 78658404cfc117d43a1ed21d086a8eff, type: 3}
       propertyPath: m_Convex
       value: 1
