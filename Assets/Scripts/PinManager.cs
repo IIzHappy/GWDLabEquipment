@@ -34,12 +34,15 @@ public class PinManager : MonoBehaviour
         pinsText.text = $"{placedPins.Count - knockedOverCount} / {placedPins.Count}";
     }
 
-    public int GetTotalPins() => placedPins.Count;
-    public int GetKnockedOverCount() => knockedOverCount;
-
     public void ResetPins()
     {
         knockedOverCount = 0;
+        foreach (PinController pin in placedPins)
+        {
+            Destroy(pin.gameObject);
+        }
         placedPins.Clear();
+        Debug.Log("Pins reset");
+        pinsText.text = "Pins Reset";
     }
 }

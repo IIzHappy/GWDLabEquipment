@@ -57,8 +57,9 @@ public class PinController : MonoBehaviour
         if (placed) return;
         placed = true;
 
+        rb.rotation = Quaternion.Euler(-90, 0, 0);
+        rb.position = new Vector3 (rb.position.x, 1.101783f, rb.position.z);
         rb.constraints = RigidbodyConstraints.FreezeAll;
-        grab.enabled = false;
 
         Debug.Log("Pin placed inside area");
 
