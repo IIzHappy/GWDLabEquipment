@@ -110,6 +110,7 @@ MonoBehaviour:
   pitchRandomness: 0.5
   basePitch: 1.2
   volumeMultiplier: 0.1
+  magnitudeSoundMin: 0
 --- !u!54 &1583749741398894363
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -144,7 +145,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5424648190006560923}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 83982ad68b965144fb94fc05313a11a8, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
