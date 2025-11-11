@@ -1,13 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.XR.Interaction.Toolkit;
+using System.Collections;
 
-public class PinBarrel : MonoBehaviour
+public class BallBarrel : MonoBehaviour
 {
-    [SerializeField] private GameObject itemPrefab;
+    [SerializeField] private List<GameObject> itemPrefab;
     [SerializeField] private float cooldown = 0.25f;
     [SerializeField] private float grabThreshold = 0.5f;
 
@@ -75,7 +75,7 @@ public class PinBarrel : MonoBehaviour
         StartCoroutine(CooldownRoutine());
 
         Transform t = hand.attachTransform != null ? hand.attachTransform : hand.transform;
-        GameObject newItem = Instantiate(itemPrefab, t.position, t.rotation);
+        GameObject newItem = Instantiate(itemPrefab[Random.Range(0, itemPrefab.Count-1)], t.position, t.rotation);
 
         if (!newItem.TryGetComponent(out XRGrabInteractable grab))
         {
