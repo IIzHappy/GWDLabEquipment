@@ -7,24 +7,11 @@ public class GrabtoSceneChange : MonoBehaviour
     public string SceneToGoTo;
 
 
-    //input some kind of way to tell if the player grabbed this thing
-    /**
-     * 
-     * if (grabbed)
-     * {
-     * 
-     *      ChangeScene();
-     * 
-     * }
-     * 
-     * 
-     * */
 
-
-    public void ChangeScene() {
+    public void OnTriggerEnter(Collider other)
+    {
 
         SceneManager.LoadScene(SceneToGoTo);
-
 
 
     }
