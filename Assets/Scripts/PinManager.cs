@@ -19,7 +19,6 @@ public class PinManager : MonoBehaviour
 
     public void OnPinPlaced(PinController pin)
     {
-        Debug.Log("asdasd");
         if (!placedPins.Contains(pin))
         {
             placedPins.Add(pin);
@@ -28,7 +27,7 @@ public class PinManager : MonoBehaviour
         }
         else
         {
-            knockedOverCount++;
+            knockedOverCount--;
             pinsText.text = $"{placedPins.Count - knockedOverCount} / {placedPins.Count}";
         }
     }
