@@ -24,7 +24,12 @@ public class PinManager : MonoBehaviour
         {
             placedPins.Add(pin);
             Debug.Log($"Pin placed. Total pins: {placedPins.Count}");
-            pinsText.text = $"{placedPins.Count} / {placedPins.Count}";
+            pinsText.text = $"{placedPins.Count - knockedOverCount} / {placedPins.Count}";
+        }
+        else
+        {
+            knockedOverCount++;
+            pinsText.text = $"{placedPins.Count - knockedOverCount} / {placedPins.Count}";
         }
     }
 
