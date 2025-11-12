@@ -6,7 +6,6 @@ public class PinController : MonoBehaviour
 {
     private XRGrabInteractable grab;
     private Rigidbody rb;
-    private PinArea area;
 
     private bool placed = false;
     private bool counted = false;
@@ -20,11 +19,6 @@ public class PinController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         grab.selectExited.AddListener(OnReleased);
-    }
-
-    public void SetPlacementArea(PinArea placementArea)
-    {
-        area = placementArea;
     }
 
     private void Update()
@@ -41,9 +35,7 @@ public class PinController : MonoBehaviour
 
     private void OnReleased(SelectExitEventArgs args)
     {
-        if (area == null) return;
-
-        if (!area.IsInsideZone(GetComponent<Collider>()))
+        if (!PinArea.Instance.IsInsideZone(GetComponent<Collider>()))
         {
             Debug.Log("Pin released outside area");
             return;
