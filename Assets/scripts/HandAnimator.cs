@@ -12,7 +12,7 @@ public class HandAnimator : MonoBehaviour
 
     private void Update()
     {
-        if (triggerValue.action.ReadValue<bool>())
+        if (triggerValue.action.ReadValue<float>() == 1)
         {
             handMesh.mesh = closeHand;
         }

@@ -49,7 +49,6 @@ public class BallBarrel : MonoBehaviour
             float value = interactor.selectInput.ReadValue();
             bool isGrippingNow = value > grabThreshold;
             bool wasGripping = _isGripping[interactor];
-
             if (isGrippingNow && !wasGripping)
             {
                 SpawnInHand(interactor);

@@ -19,6 +19,7 @@ public class PinManager : MonoBehaviour
 
     public void OnPinPlaced(PinController pin)
     {
+        Debug.Log("asdasd");
         if (!placedPins.Contains(pin))
         {
             placedPins.Add(pin);
