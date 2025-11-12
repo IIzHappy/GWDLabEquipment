@@ -22,32 +22,51 @@ public class PinManager : MonoBehaviour
         if (!placedPins.Contains(pin))
         {
             placedPins.Add(pin);
-            Debug.Log($"Pin placed. Total pins: {placedPins.Count}");
-            pinsText.text = $"{placedPins.Count - knockedOverCount} / {placedPins.Count}";
         }
-        else
-        {
-            knockedOverCount--;
-            pinsText.text = $"{placedPins.Count - knockedOverCount} / {placedPins.Count}";
-        }
+
+        UpdateUI();
+        Debug.Log($"Pin placed. Total pins: {placedPins.Count}");
     }
 
     public void OnPinKnockedOver(PinController pin)
     {
-        knockedOverCount++;
-        Debug.Log($"Pin knocked over! Count: {knockedOverCount} / {placedPins.Count}");
-        pinsText.text = $"{placedPins.Count - knockedOverCount} / {placedPins.Count}";
+        if (placedPins.Contains(pin))
+        {
+            knockedOverCount++;
+            UpdateUI();
+            Debug.Log($"Pin knocked over! Count: {knockedOverCount} / {placedPins.Count}");
+        }
+    }
+    public void OnPinStandUp(PinController pin)
+    {
+        if (placedPins.Contains(pin))
+        {
+            knockedOverCount--;
+            UpdateUI();
+            Debug.Log($"Count: {knockedOverCount} / {placedPins.Count}");
+        }
     }
 
     public void ResetPins()
     {
         knockedOverCount = 0;
+
         foreach (PinController pin in placedPins)
         {
-            Destroy(pin.gameObject);
+            if (pin != null)
+                Destroy(pin.gameObject);
         }
+
         placedPins.Clear();
+        UpdateUI();
         Debug.Log("Pins reset");
-        pinsText.text = "Pins Reset";
+    }
+
+    public void UpdateUI()
+    {
+        if (pinsText)
+        {
+            pinsText.text = $"{placedPins.Count - knockedOverCount} / {placedPins.Count}";
+        }
     }
 }

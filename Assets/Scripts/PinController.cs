@@ -7,9 +7,8 @@ public class PinController : MonoBehaviour
     private XRGrabInteractable grab;
     private Rigidbody rb;
 
-    private bool placed = false;
     private bool counted = false;
-    private bool knockedOver = false;
+    private bool knockedOver = true;
 
     private const float KnockAngleThreshold = 25;
 
@@ -23,9 +22,9 @@ public class PinController : MonoBehaviour
 
     private void Update()
     {
-        if (!placed || knockedOver) return;
+        if (knockedOver) return;
 
-        float angle = Vector3.Angle(transform.rotation.ToEuler(), new Vector3 (-90, 0, 0));
+        float angle = Vector3.Angle(transform.forward, Vector3.up);
         if (angle > KnockAngleThreshold)
         {
             knockedOver = true;
@@ -46,13 +45,8 @@ public class PinController : MonoBehaviour
 
     private void PlacePin()
     {
-        if (placed) return;
-        placed = true;
-        knockedOver = false;
-
         rb.rotation = Quaternion.Euler(-90, 0, 0);
         rb.position = new Vector3(rb.position.x, 1.101783f, rb.position.z);
-        //rb.constraints = RigidbodyConstraints.FreezeAll;
 
         Debug.Log("Pin placed inside area");
 
@@ -61,5 +55,11 @@ public class PinController : MonoBehaviour
             counted = true;
             PinManager.Instance?.OnPinPlaced(this);
         }
+        else if(knockedOver)
+        {
+            PinManager.Instance?.OnPinStandUp(this);
+        }
+        knockedOver = false;
+        PinManager.Instance?.UpdateUI();
     }
 }
