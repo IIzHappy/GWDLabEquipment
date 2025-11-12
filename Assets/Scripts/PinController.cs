@@ -25,7 +25,7 @@ public class PinController : MonoBehaviour
     {
         if (!placed || knockedOver) return;
 
-        float angle = Vector3.Angle(transform.up, Vector3.up);
+        float angle = Vector3.Angle(transform.rotation.ToEuler(), new Vector3 (-90, 0, 0));
         if (angle > KnockAngleThreshold)
         {
             knockedOver = true;
